@@ -71,22 +71,22 @@ function App() {
       onMouseMove={isMouseDown ? mousemove : null}
     >
       <div
-        className={`absolute top-[50%] left-[50%] flex space-x-4 [&>img]:h-[32rem] [&>img]:w-[${width}rem] [&>img]:object-cover`}
+        className="absolute top-[50%] left-[50%] flex space-x-4"
         style={{
           transform: isMouseDown
             ? `translate(${-percentage}%,-55%)`
             : `translate(${-lastPercentage}%,-55%)`,
         }}
       >
-        <Image src={image1} alt="" position={imagePosition} />
-        <Image src={image2} alt="" position={imagePosition} />
-        <Image src={image3} alt="" position={imagePosition} />
-        <Image src={image4} alt="" position={imagePosition} />
-        <Image src={image5} alt="" position={imagePosition} />
-        <Image src={image6} alt="" position={imagePosition} />
-        <Image src={image7} alt="" position={imagePosition} />
-        <Image src={image8} alt="" position={imagePosition} />
-        <Image src={image9} alt="" position={imagePosition} />
+        <Image src={image1} alt="" position={imagePosition} width={width} />
+        <Image src={image2} alt="" position={imagePosition} width={width} />
+        <Image src={image3} alt="" position={imagePosition} width={width} />
+        <Image src={image4} alt="" position={imagePosition} width={width} />
+        <Image src={image5} alt="" position={imagePosition} width={width} />
+        <Image src={image6} alt="" position={imagePosition} width={width} />
+        <Image src={image7} alt="" position={imagePosition} width={width} />
+        <Image src={image8} alt="" position={imagePosition} width={width} />
+        <Image src={image9} alt="" position={imagePosition} width={width} />
         <Image
           src={image10}
           alt=""
@@ -97,14 +97,15 @@ function App() {
     </div>
   );
 }
-function Image({ src, alt, position }) {
+function Image({ src, alt, position, width }) {
   return (
     <motion.img
       src={src}
       alt={alt}
-      className="drag-none select-none"
+      className="drag-none h-[32rem] select-none object-cover"
       draggable="false"
       style={{
+        width: `${width}rem`,
         objectPosition: `${position}% 50%`,
       }}
       transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1 }}
