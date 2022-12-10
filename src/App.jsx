@@ -92,6 +92,7 @@ function App() {
           alt=""
           draggable="false"
           position={imagePosition}
+          width={width}
         />
       </div>
     </div>
